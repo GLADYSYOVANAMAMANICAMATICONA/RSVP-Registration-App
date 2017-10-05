@@ -5,6 +5,7 @@ class Model {
 
     ],
       this.callback = null;
+
   }
 
   suscribe(render) {
@@ -24,12 +25,11 @@ class Model {
     this.notify();
   }
 
-  // array.splice(x, 1);
-  // donde x es el indice que deseas eliminar
-  removeInvitate(e, index) {
-    this.invitados.splice(index, 1);
-    this.notify();
-}
+   removeTodo(name) {
+      this.invitaciones = this.invitaciones.filter(item => item !== name);
+      this.notify();
+   }
+
 
   newList() {
     let list = "";
@@ -39,7 +39,7 @@ class Model {
           <li key={index}>
             {item.name}
             <label>confirmed<input type="checkbox" /></label>
-            <button onClick={e => model.removerInvitado(e, index)}>remove</button>       
+            <button onClick={() => model.removeTodo(item)}>remove</button>       
           </li>
         )
       });
