@@ -37,7 +37,7 @@ class Model {
         )
       });
     }
-    return (<div>{list}</div>)
+    return (<ul>{list}</ul>)//ul en css para que se forme como tarjetas
     this.callback();
     this.notify();
   }
@@ -45,7 +45,7 @@ class Model {
 
 const Header = () => {
   return (
-    <div classname="wrapper">
+    <div>
       <header>
         <h1>RSVP</h1>
         <p> Registration App </p>
